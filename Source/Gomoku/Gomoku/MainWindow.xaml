@@ -2,7 +2,8 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="770" Width="1072">
-    <Grid MouseUp="Grid_MouseUp">
+
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="111*"/>
             <RowDefinition Height="628*"/>
@@ -27,7 +28,17 @@
         </Grid>
         <Canvas x:Name="Board" MouseDown="Canvas_MouseDown" Width="{Binding ElementName=Board, Path=ActualHeight}" Margin="10,10,10,10" Background="Honeydew" Grid.Row="1" Grid.Column="0" SizeChanged="Board_SizeChanged">
         </Canvas>
-        <TextBox Grid.Row="0" Grid.ColumnSpan="2" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="10,10,10,10" TextWrapping="Wrap" FontFamily="Arial" Text="Gomoku – Five in a row - multiplayer" FontSize="36" Background="#eee" BorderBrush="#FFC8CCDA" IsEnabled="False"/>
+        <TextBox Grid.Row="0" Grid.ColumnSpan="2" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="10" TextWrapping="Wrap" FontFamily="Arial" Text="Gomoku – Five in a row - multiplayer" FontSize="36" Background="#eee" BorderBrush="#FFC8CCDA" IsEnabled="False">
+
+        </TextBox>
+        <Menu IsMainMenu="True"  HorizontalAlignment="Left" Margin="0,0,460,88">
+            <MenuItem Header="Type" Click="MenuItem_Click_2" Height="23" Width="53">
+                <MenuItem Header="_2 peoples" Click="MenuItem_Click" />
+                <MenuItem Header="_machine and people" Click="MenuItem_Click_1" />
+                <MenuItem Header="Online" Click="MenuItem_Click_3"/>
+                <MenuItem Header="Play by Machine" Click="MenuItem_Click_4"/>
+            </MenuItem>
+        </Menu>
 
 
 
